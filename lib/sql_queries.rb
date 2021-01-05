@@ -35,6 +35,7 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
     LEFT OUTER JOIN projects
     ON pledges.project_id = projects.id
     GROUP BY projects.title 
+    
     "
 end
 
