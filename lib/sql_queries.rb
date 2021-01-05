@@ -41,11 +41,11 @@ end
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_summed_amount
   "SELECT
     users.name,
-    (SELECT SUM(pledges.amount)
+    (SELECT SUM(pledges.amount))
     FROM pledges
     LEFT OUTER JOIN users
     ON pledges.user_id = users.id
-    GROUP BY users.name, pledges.amount"
+    GROUP BY users.name"
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
